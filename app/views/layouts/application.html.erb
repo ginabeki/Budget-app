@@ -13,6 +13,17 @@
 
   <body class="bg-gray-100 h-screen">
     <main class="bg-white bg-opacity-20 backdrop-blur-xl rounded h-screen">
+     <nav class="navbar">      
+  <% if user_signed_in? %> Logged in as <strong> <%= current_user.name %></strong> | 
+  <%= link_to "Home", class: "navbar-link" %> |
+   <%= link_to "Expenses", class: "navbar-link" %> |
+    <%= link_to "Categories", class: "navbar-link" %> |
+          <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |   
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link"  %>      
+          <% end %>
+  </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>

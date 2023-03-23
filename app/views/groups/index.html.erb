@@ -1,4 +1,21 @@
-<div>
-  <h1 class="font-bold text-4xl">Group#index</h1>
-  <p>Find me in app/views/group/index.html.erb</p>
+<!-- app/views/groups/index.html.erb -->
+<h1 class="text-center text-green-custom text-3xl font-bold">Categories</h1>
+
+<ul class=" p-8">
+  <% @groups.each do |group| %>
+  <%= link_to expenses_path(group_id: group.id) do %>
+    <li class="flex justify-center gap-6 items-center bg-white shadow-md rounded-lg mb-4 p-2">
+    <img src="<%= group.icon %>" alt="<%= group.name %> icon" class="w-16 h-16">
+      <p class="whitespace-nowrap text-gray-600"><%= group.name %></p>
+      <p class="whitespace-nowrap"> $<%= number_with_precision(group.expenses.sum(:amount), precision: 2) %></p>
+      <p class="whitespace-nowrap text-xs">
+     <%= group.created_at.strftime('%d %b %Y') %>
+     </p>
+    </li>
+  <% end %>
+   <% end %>
+
+</ul>
+<div class="text-center mt-8">
+<%= link_to "Add a new category", new_group_path, class: " p-2 inline-flex justify-center items-center border border-green-custom" %>
 </div>

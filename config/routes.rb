@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     root 'splash#index', as: :unauthenticated_root
   end
 end
-  resources :groups, only: [:index]
-  resources :expenses, only: [:index]
+  resources :groups, only: [:index, :show, :new, :create]
+  resources :expenses, only: [:index, :show]
 
 end

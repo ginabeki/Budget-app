@@ -50,8 +50,9 @@ Expense App is an expenses management app created using Ruby on Rails. It allows
 - Create transaction(expense): a user can create a transaction that belongs to a specific category.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+- [Live Demo](https://watch.screencastify.com/v/MI0yFFvEqTKWdHVUP4X9)
 
-- [Live Demo Link](https://expenseall.onrender.com/)
+- [Live Link](https://expenseall.onrender.com/)
 
 ## Preview
 

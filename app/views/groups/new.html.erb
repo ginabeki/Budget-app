@@ -1,6 +1,8 @@
-<h1 class="text-center text-green-custom text-3xl">Create New Category</h1>
-
-<%= form_for @group, html: { class: "flex flex-col gap-4 m-8" }  do |f| %>
+<div class="flex items-center justify-between mx-4 md:mx-20"><%= link_to "&larr;".html_safe, groups_path, class: "text-5xl mb-3 text-black font-bold" %>
+<h1 class="uppercase text-center text-green-custom text-2xl">
+Create New Category</h1>
+</div>
+<%= form_for @group, html: { class: "flex flex-col gap-4 m-8 items-center" }  do |f| %>
   <div class="flex flex-col gap-2">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -8,12 +10,8 @@
 
   <div class="flex flex-col gap-2">
     <%= f.label :icon %>
-    <%= f.text_field :icon %>
+    <%= f.file_field :icon %>
   </div>
-    <div>
-  <%= f.label :created_at %><br>
-  <%= f.datetime_select :created_at, { :discard_hour => true, :discard_minute => true, :discard_second => true }, { :class => "" } %>
-</div>
 
-  <%= f.submit "Create Group", class: " p-1 inline-flex justify-center items-center border border-green-custom w-32 cursor-pointer text-teal-900" %>
+  <%= f.submit "Save", class: " p-1 inline-flex justify-center items-center border border-green-custom w-32 cursor-pointer text-teal-900" %>
 <% end %>

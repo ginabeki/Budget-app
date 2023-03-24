@@ -1,13 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   def index
-    # Retrieve all categories from the database
     @groups = current_user.groups
     @user = current_user
   end
 
   def new
-    # Create a new instance of the Group model
     @group = current_user.groups.build
     @user = current_user
   end

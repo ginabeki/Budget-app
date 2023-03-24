@@ -1,0 +1,22 @@
+<h1 class="uppercase text-center text-3xl">Add Transaction</h1>
+<%= form_with model: @expense, html: { class: "flex flex-col gap-4 m-8 items-center" }, url: expenses_path, scope: :expense do |f|%>
+
+<div>
+    <%= f.label :name, hidden: true %><br>
+    <%= f.text_field :name, placeholder: 'Transaction Name' %>
+  </div>
+
+  <div>
+    <%= f.label :amount, hidden: true %><br>
+    <%= f.number_field :amount, placeholder: 'Amount' %>
+  </div>
+
+  <div>
+    <%= f.label :group, hidden: true %><br>
+    <%= f.select :group, @groups, selected: @groups[0][1] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: " p-1 inline-flex justify-center items-center border border-green-custom w-32 cursor-pointer text-teal-900" %>
+  </div>
+<% end %>

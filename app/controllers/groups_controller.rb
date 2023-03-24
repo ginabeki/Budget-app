@@ -6,13 +6,6 @@ class GroupsController < ApplicationController
     @user = current_user
   end
 
-  def show
-    # Retrieve the category based on the provided ID
-    @group = current_user.groups.find(params[:id])
-    # Retrieve all transactions belonging to the category
-    @expenses = @group.expenses
-  end
-
   def new
     # Create a new instance of the Group model
     @group = current_user.groups.build

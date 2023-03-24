@@ -23,6 +23,6 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: rgb(133, 204, 92);
-  background: linear-gradient(92deg, rgb(133, 204, 92) 0%, rgba(255, 255, 255, 1) 65%);
+  color: #434b54;
+  background-color: #e2e8f0;
 }

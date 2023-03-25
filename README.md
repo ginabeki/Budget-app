@@ -52,7 +52,7 @@ Expense App is an expenses management app created using Ruby on Rails. It allows
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Link](https://expenseall.onrender.com/)
+- [Live Link](https://expenseapp-99ze.onrender.com)
 
 ## Preview
 

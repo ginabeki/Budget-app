@@ -1,0 +1,25 @@
+<div class=" flex justify-center items-center flex-col gap-4">
+<%= link_to "Go back".html_safe, root_path, class: "text-center text-xl my-8 font-bold" %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mt-4">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field mt-4">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions mt-8">
+    <%= f.submit "Log in", class: " p-2 inline-flex justify-center items-center border border-green-custom" %>
+  </div>
+<% end %>
+</div>

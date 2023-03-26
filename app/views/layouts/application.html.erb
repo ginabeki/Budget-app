@@ -11,8 +11,21 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-gray-100 h-screen">
+    <main class="bg-white bg-opacity-20 backdrop-blur-xl rounded h-screen">
+  <% if user_signed_in? %>
+  <header class="mb-8 py-4 shadow-md rounded-lg bg-blue-two-custom">
+    <nav class="flex justify-center items-center gap-1 md:gap-4 text-white">    
+      Welcome <strong><%= current_user.name %></strong> | 
+      <%= link_to "Categories", groups_path, class: "navbar-link" %> |
+      <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |   
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
+    </nav>
+  </header>
+<% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>

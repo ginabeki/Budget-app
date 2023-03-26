@@ -1,0 +1,27 @@
+<h1 class="uppercase text-center text-2xl mb-5 md:text-3xl">Transactions</h1>
+<% if @group.present? %>
+<div class="flex items-center justify-between mb-4 mx-4 md:mx-20">
+<%= link_to "&larr;".html_safe, groups_path, class: "text-4xl mb-3 text-black font-bold" %>
+<h2 class=" text-center uppercase text-green-custom text-2xl font-bold mb-4 md:text-2xl"><%= @group.name %></h1>
+</div>
+<p class="bg-white shadow-md rounded-lg mb-4 p-4 mx-10 flex justify-between items-center w-64 mx-auto md:w-2/4"><span>Total Spent</span><%= number_to_currency(@total_amount) %> </p>
+<% end %>
+
+<% if @group_expenses %>
+  <% @group_expenses.each do |expense| %>
+    <div class="bg-white shadow-md rounded-lg mb-4 p-4 flex flex-col gap-6 w-64 mx-auto md:w-2/4">
+    <div class="flex justify-between">
+      <p><%= expense.expense.name.capitalize %></p>
+      <p>Amount: <%= number_to_currency(expense.expense.amount) %></p>
+      </div>
+      <p><%= expense.created_at.to_date %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>No expenses found for this group.</p>
+<% end %>
+<div class="text-center mt-8">
+<%= link_to "Add a new transaction", new_expense_path, class: " p-2 inline-flex justify-center items-center border border-green-custom" %>
+</div>
+
+
